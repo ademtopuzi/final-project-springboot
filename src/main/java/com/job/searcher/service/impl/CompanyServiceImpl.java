@@ -1,6 +1,7 @@
 package com.job.searcher.service.impl;
 
 import com.job.searcher.Dto.CompanyDto;
+import com.job.searcher.Dto.CompanyUpdateDto;
 import com.job.searcher.entity.Company;
 import com.job.searcher.exceptions.ResourceNotFountException;
 import com.job.searcher.mapper.CompanyMapper;
@@ -9,6 +10,8 @@ import com.job.searcher.service.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 
 @Service
@@ -32,6 +35,15 @@ public class CompanyServiceImpl implements CompanyService {
     public Company findCompanyById(Integer id) {
         return cm.findById(id).orElseThrow(() ->new ResourceNotFountException(String
                 .format("Company with id %s not found " , id )));
+    }
+
+    @Override
+    public CompanyUpdateDto updateCompany(Integer id, CompanyUpdateDto req) {
+
+        Company c =findCompanyById(id);
+        c=CompanyMapper.updateBuilder(c,req);
+
+        return CompanyMapper.companyUpdateDto(cm.save(c));
     }
 
 

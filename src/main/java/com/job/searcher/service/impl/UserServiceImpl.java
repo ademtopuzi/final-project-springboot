@@ -1,6 +1,7 @@
 package com.job.searcher.service.impl;
 
 import com.job.searcher.Dto.UserDto;
+import com.job.searcher.Dto.UserUpdateDto;
 import com.job.searcher.entity.User;
 import com.job.searcher.entity.UserRole;
 import com.job.searcher.exceptions.ResourceNotFountException;
@@ -43,6 +44,13 @@ public class UserServiceImpl implements UserService , UserDetailsService {
         u= userRepository.save(u);
 
         return UserMapper.toDto(u);
+    }
+
+    @Override
+    public UserUpdateDto updateUser(Integer id, UserUpdateDto req) {
+        User u = findUserById(id);
+        u=UserMapper.updateBuilder(u,req);
+        return UserMapper.toUserUpdateDto(userRepository.save(u));
     }
 
 

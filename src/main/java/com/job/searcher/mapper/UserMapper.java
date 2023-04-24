@@ -1,6 +1,7 @@
 package com.job.searcher.mapper;
 
 import com.job.searcher.Dto.UserDto;
+import com.job.searcher.Dto.UserUpdateDto;
 import com.job.searcher.entity.User;
 
 public class UserMapper {
@@ -27,6 +28,24 @@ public class UserMapper {
                 .phoneNumber(u.getPhoneNumber())
                 .build();
 
+    }
+
+    public static UserUpdateDto toUserUpdateDto(User  req){
+        return UserUpdateDto.builder()
+                .id(req.getId())
+                .name(req.getName())
+                .lastname(req.getLastname())
+                .email(req.getEmail())
+                .phoneNumber(req.getPhoneNumber())
+                .build();
+    }
+
+    public static User updateBuilder(User u,UserUpdateDto req){
+        u.setName(req.getName());
+        u.setLastname(req.getLastname());
+        u.setEmail(req.getEmail());
+        u.setPhoneNumber(req.getPhoneNumber());
+        return u;
     }
 
 

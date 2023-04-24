@@ -1,6 +1,7 @@
 package com.job.searcher.controller;
 
 import com.job.searcher.Dto.UserDto;
+import com.job.searcher.Dto.UserUpdateDto;
 import com.job.searcher.entity.User;
 import com.job.searcher.mapper.UserMapper;
 import com.job.searcher.service.UserService;
@@ -30,6 +31,13 @@ public class UserController {
         User u = userService.findUserById(id);
         return ResponseEntity.ok(UserMapper.toDto(u));
     }
+
+    @PutMapping("/user/{id}")
+    public ResponseEntity<UserUpdateDto> updateUser(@PathVariable Integer id,@RequestBody UserUpdateDto req){
+        return ResponseEntity.ok(userService.updateUser(id,req));
+
+    }
+
 
 
 

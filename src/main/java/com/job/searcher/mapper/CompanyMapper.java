@@ -1,6 +1,7 @@
 package com.job.searcher.mapper;
 
 import com.job.searcher.Dto.CompanyDto;
+import com.job.searcher.Dto.CompanyUpdateDto;
 import com.job.searcher.Dto.JobDto;
 import com.job.searcher.entity.Company;
 import com.job.searcher.entity.Job;
@@ -30,6 +31,22 @@ public class CompanyMapper {
                 .email(cm.getEmail())
                 .password(cm.getPassword())
                 .build();
+    }
+
+    public static CompanyUpdateDto companyUpdateDto(Company c){
+        return CompanyUpdateDto.builder()
+                .id(c.getId())
+                .name(c.getName())
+                .city(c.getCity())
+                .email(c.getEmail())
+                .build();
+    }
+
+    public static Company updateBuilder(Company c,CompanyUpdateDto updateDto){
+        c.setName(updateDto.getName());
+        c.setEmail(updateDto.getEmail());
+        c.setCity(updateDto.getCity());
+        return c;
     }
 
 }
