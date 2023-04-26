@@ -37,6 +37,8 @@ public class Job {
     @JoinColumn(name = "category_id",referencedColumnName = "id")
     private Category category;
 
+    @OneToMany(mappedBy = "job",fetch = FetchType.LAZY)
+    private List<Applied> jobsApplied;
 
 
 }

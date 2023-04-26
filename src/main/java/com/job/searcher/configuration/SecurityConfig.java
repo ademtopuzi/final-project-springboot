@@ -82,7 +82,7 @@ public class SecurityConfig {
         // Set permissions on endpoints
         http.authorizeRequests()
                 // Our public endpoints
-                .antMatchers("/auth/**","/users/**","/companies/**","/jobs/**")
+                .antMatchers("/auth/**","/users/**","/companies/**","/jobs/**","/apply/**")
                 .permitAll()
                 // Our private endpoints
                 .anyRequest()

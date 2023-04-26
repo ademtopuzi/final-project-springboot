@@ -43,6 +43,9 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
+    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY)
+    private List<Applied> jobsApplied;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
