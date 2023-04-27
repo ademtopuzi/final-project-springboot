@@ -1,9 +1,9 @@
 package com.job.searcher.controller;
 
-import com.job.searcher.Dto.JobCategoryDto;
-import com.job.searcher.Dto.UserDto;
-import com.job.searcher.Dto.auth.AuthRequest;
-import com.job.searcher.Dto.auth.TokenDto;
+import com.job.searcher.dto.JobCategoryDto;
+import com.job.searcher.dto.UserDto;
+import com.job.searcher.dto.auth.AuthRequest;
+import com.job.searcher.dto.auth.TokenDto;
 import com.job.searcher.entity.User;
 import com.job.searcher.service.JobService;
 import com.job.searcher.service.UserService;
@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import java.time.Instant;
 import java.util.Arrays;

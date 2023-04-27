@@ -1,7 +1,7 @@
 package com.job.searcher.service;
 
-import com.job.searcher.Dto.UserDto;
-import com.job.searcher.Dto.UserUpdateDto;
+import com.job.searcher.dto.UserDto;
+import com.job.searcher.dto.UserUpdateDto;
 import com.job.searcher.entity.User;
 
 public interface UserService {

@@ -1,7 +1,7 @@
 package com.job.searcher.service.impl;
 
-import com.job.searcher.Dto.CompanyDto;
-import com.job.searcher.Dto.CompanyUpdateDto;
+import com.job.searcher.dto.CompanyDto;
+import com.job.searcher.dto.CompanyUpdateDto;
 import com.job.searcher.entity.Company;
 import com.job.searcher.exceptions.ResourceNotFountException;
 import com.job.searcher.mapper.CompanyMapper;
@@ -10,8 +10,6 @@ import com.job.searcher.service.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 
 @Service

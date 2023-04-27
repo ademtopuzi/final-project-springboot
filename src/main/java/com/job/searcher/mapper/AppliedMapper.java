@@ -1,6 +1,6 @@
 package com.job.searcher.mapper;
 
-import com.job.searcher.Dto.AppliedDto;
+import com.job.searcher.dto.AppliedDto;
 import com.job.searcher.entity.Applied;
 import com.job.searcher.entity.Job;
 import com.job.searcher.entity.User;

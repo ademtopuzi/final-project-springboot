@@ -1,4 +1,4 @@
-package com.job.searcher.Dto;
+package com.job.searcher.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

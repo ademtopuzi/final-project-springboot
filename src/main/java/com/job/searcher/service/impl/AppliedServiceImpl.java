@@ -1,8 +1,6 @@
 package com.job.searcher.service.impl;
 
-import com.job.searcher.Dto.AppliedDto;
-import com.job.searcher.Dto.JobDto;
-import com.job.searcher.Dto.UserDto;
+import com.job.searcher.dto.AppliedDto;
 import com.job.searcher.entity.Applied;
 import com.job.searcher.entity.Job;
 import com.job.searcher.entity.User;

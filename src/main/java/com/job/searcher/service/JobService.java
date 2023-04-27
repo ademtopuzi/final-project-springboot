@@ -1,7 +1,7 @@
 package com.job.searcher.service;
 
-import com.job.searcher.Dto.JobCategoryDto;
-import com.job.searcher.Dto.JobDto;
+import com.job.searcher.dto.JobCategoryDto;
+import com.job.searcher.dto.JobDto;
 import com.job.searcher.entity.Job;
 
 import java.util.List;

@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
-public class EcommerceGlobalExceptionHandling extends ResponseEntityExceptionHandler {
+public class SearcherGlobalExceptionHandling extends ResponseEntityExceptionHandler {
 
 
     @ExceptionHandler

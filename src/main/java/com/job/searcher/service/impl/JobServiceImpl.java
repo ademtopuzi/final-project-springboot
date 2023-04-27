@@ -1,7 +1,7 @@
 package com.job.searcher.service.impl;
 
-import com.job.searcher.Dto.JobCategoryDto;
-import com.job.searcher.Dto.JobDto;
+import com.job.searcher.dto.JobCategoryDto;
+import com.job.searcher.dto.JobDto;
 import com.job.searcher.entity.Category;
 import com.job.searcher.entity.Company;
 import com.job.searcher.entity.Job;
@@ -14,7 +14,6 @@ import com.job.searcher.service.JobService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -1,8 +1,7 @@
 package com.job.searcher.mapper;
 
-import com.job.searcher.Dto.CompanyDto;
-import com.job.searcher.Dto.JobCategoryDto;
-import com.job.searcher.Dto.JobDto;
+import com.job.searcher.dto.JobCategoryDto;
+import com.job.searcher.dto.JobDto;
 import com.job.searcher.entity.Category;
 import com.job.searcher.entity.Company;
 import com.job.searcher.entity.Job;

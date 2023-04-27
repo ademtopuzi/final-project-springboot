@@ -1,17 +1,13 @@
-package com.job.searcher.Dto;
+package com.job.searcher.dto.auth;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class RoleDto {
+public class TokenDto {
 
-    private Integer id ;
-
-    private String name;
+    private String token;
 }

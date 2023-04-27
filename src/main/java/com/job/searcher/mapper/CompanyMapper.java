@@ -1,12 +1,8 @@
 package com.job.searcher.mapper;
 
-import com.job.searcher.Dto.CompanyDto;
-import com.job.searcher.Dto.CompanyUpdateDto;
-import com.job.searcher.Dto.JobDto;
+import com.job.searcher.dto.CompanyDto;
+import com.job.searcher.dto.CompanyUpdateDto;
 import com.job.searcher.entity.Company;
-import com.job.searcher.entity.Job;
-
-import java.util.stream.Collectors;
 
 public class CompanyMapper {
 

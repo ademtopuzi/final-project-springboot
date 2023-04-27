@@ -1,4 +1,4 @@
-package com.job.searcher.Dto.auth;
+package com.job.searcher.dto.auth;
 
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class AuthRequest {
 
-    @NotNull@Email
+    @NotNull @Email
     private String email;
 
     @NotNull

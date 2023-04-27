@@ -1,6 +1,6 @@
 package com.job.searcher.controller;
 
-import com.job.searcher.Dto.AppliedDto;
+import com.job.searcher.dto.AppliedDto;
 import com.job.searcher.service.AppliedService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

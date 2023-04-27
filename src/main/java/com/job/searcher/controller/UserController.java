@@ -1,7 +1,7 @@
 package com.job.searcher.controller;
 
-import com.job.searcher.Dto.UserDto;
-import com.job.searcher.Dto.UserUpdateDto;
+import com.job.searcher.dto.UserDto;
+import com.job.searcher.dto.UserUpdateDto;
 import com.job.searcher.entity.User;
 import com.job.searcher.mapper.UserMapper;
 import com.job.searcher.service.UserService;

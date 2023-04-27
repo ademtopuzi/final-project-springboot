@@ -1,7 +1,7 @@
 package com.job.searcher.service.impl;
 
-import com.job.searcher.Dto.UserDto;
-import com.job.searcher.Dto.UserUpdateDto;
+import com.job.searcher.dto.UserDto;
+import com.job.searcher.dto.UserUpdateDto;
 import com.job.searcher.entity.User;
 import com.job.searcher.entity.UserRole;
 import com.job.searcher.exceptions.ResourceNotFountException;
@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService , UserDetailsService {
         User u = UserMapper.toEntity(req);
         u.setRole(userRole!=null?UserRole.fromValue(userRole):UserRole.USER);
         u.setPassword(passwordEncoder.encode(req.getPassword()));
-        u= userRepository.save(u);
+        u = userRepository.save(u);
 
         return UserMapper.toDto(u);
     }
