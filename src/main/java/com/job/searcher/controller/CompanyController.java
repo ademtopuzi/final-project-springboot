@@ -33,7 +33,7 @@ public class CompanyController {
         return ResponseEntity.ok(CompanyMapper.toDto(c));
     }
 
-    @PutMapping("company/{id}")
+    @PutMapping("/company/{id}")
     public ResponseEntity<CompanyUpdateDto> updateCompany(@PathVariable Integer id , @RequestBody CompanyUpdateDto req){
         return ResponseEntity.ok(companyService.updateCompany(id ,req));
     }
