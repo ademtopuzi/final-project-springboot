@@ -1,7 +1,6 @@
 package com.job.searcher.controller;
 
 import com.job.searcher.BaseTest;
-import com.job.searcher.dto.CompanyDto;
 import com.job.searcher.dto.CompanyUpdateDto;
 import com.job.searcher.entity.Company;
 import com.job.searcher.service.CompanyService;
@@ -21,16 +20,6 @@ public class CompanyControllerTest extends BaseTest {
 
     @MockBean
     private  CompanyService companyService;
-
-//    @Test
-//    public void test_registerCompany()throws Exception{
-//        Mockito.doReturn(new CompanyDto()).when(companyService).registerCompany(Mockito.any());
-//        mvc.perform(MockMvcRequestBuilders.post("/companies/company/")
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(mapper.writeValueAsString(new CompanyDto())))
-//                .andExpect(status().isOk());
-//
-//    }
 
     @Test
     public void test_findCompanyById()throws Exception{

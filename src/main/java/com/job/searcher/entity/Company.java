@@ -9,9 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Data

@@ -1,6 +1,4 @@
 package com.job.searcher.controller;
-
-
 import com.job.searcher.dto.CompanyDto;
 import com.job.searcher.dto.CompanyUpdateDto;
 import com.job.searcher.entity.Company;

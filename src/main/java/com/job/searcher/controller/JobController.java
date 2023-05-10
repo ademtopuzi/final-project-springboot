@@ -1,6 +1,4 @@
 package com.job.searcher.controller;
-
-
 import com.job.searcher.dto.JobCategoryDto;
 import com.job.searcher.dto.JobDto;
 import com.job.searcher.entity.Job;
@@ -10,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 

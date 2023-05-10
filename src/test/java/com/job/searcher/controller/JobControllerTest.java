@@ -2,7 +2,6 @@ package com.job.searcher.controller;
 
 import com.job.searcher.BaseTest;
 import com.job.searcher.dto.JobCategoryDto;
-import com.job.searcher.dto.JobDto;
 import com.job.searcher.entity.Job;
 import com.job.searcher.service.JobService;
 import org.junit.jupiter.api.Test;
@@ -20,15 +19,6 @@ public class JobControllerTest extends BaseTest {
 
     @MockBean
     private  JobService jobService;
-
-//    @Test
-//    public void test_addJob()throws Exception{
-//        Mockito.doReturn(new JobDto()).when(jobService).addJob(Mockito.any(),Mockito.any(),Mockito.any());
-//        mvc.perform(MockMvcRequestBuilders.post("/jobs/job/1/2")
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(mapper.writeValueAsString(new JobDto())))
-//                .andExpect(status().isOk());
-//    }
 
     @Test
     public void test_findJobByid_ok()throws Exception{

@@ -2,7 +2,6 @@ package com.job.searcher.exceptions;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;
-
 import java.util.Date;
 
 @Data

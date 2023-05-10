@@ -95,7 +95,7 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // Used by JwtAuthenticationProvider to generate JWT tokens
+
     @Bean
     public JwtEncoder jwtEncoder() {
         RSAKey jwk = new RSAKey.Builder(this.rsaPublicKey).privateKey(this.rsaPrivateKey).build();
@@ -103,13 +103,13 @@ public class SecurityConfig {
         return new NimbusJwtEncoder(jwks);
     }
 
-    // Used by JwtAuthenticationProvider to decode and validate JWT tokens
+
     @Bean
     public JwtDecoder jwtDecoder() {
         return NimbusJwtDecoder.withPublicKey(this.rsaPublicKey).build();
     }
 
-    // Extract authorities from the roles claim
+
     @Bean
     public JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
@@ -120,13 +120,13 @@ public class SecurityConfig {
         return jwtAuthenticationConverter;
     }
 
-    // Set password encoding schema
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    // Used by spring security if CORS is enabled.
+
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -139,7 +139,6 @@ public class SecurityConfig {
         return new CorsFilter(source);
     }
 
-    // Expose authentication manager bean
     @Bean
     public AuthenticationManager authenticationManager(
             AuthenticationConfiguration authenticationConfiguration) throws Exception {
