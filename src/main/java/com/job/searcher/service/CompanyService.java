@@ -6,10 +6,10 @@ import com.job.searcher.entity.Company;
 
 public interface CompanyService {
 
-    CompanyDto registerCompany(CompanyDto req);
+    CompanyDto registerCompany(CompanyDto request);
     Company findCompanyById (Integer id);
 
-    CompanyUpdateDto updateCompany(Integer id , CompanyUpdateDto req);
+    CompanyUpdateDto updateCompany(Integer id , CompanyUpdateDto request);
 
 
 

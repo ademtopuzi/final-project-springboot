@@ -77,14 +77,14 @@ public class AuthController {
   }
 
   @PostMapping("/register")
-  public ResponseEntity<UserDto> registerUser(@RequestBody @Valid UserDto u){
-    return ResponseEntity.ok(userService.registerUser(u,"ADMIN"));
+  public ResponseEntity<UserDto> registerUser(@RequestBody @Valid UserDto userDto){
+    return ResponseEntity.ok(userService.registerUser(userDto,"ADMIN"));
   }
 
   @PostMapping("/category")
-  public ResponseEntity<JobCategoryDto> addCategory(@RequestBody JobCategoryDto req){
+  public ResponseEntity<JobCategoryDto> addCategory(@RequestBody JobCategoryDto request){
 
-    return ResponseEntity.ok(jobService.addCategory(req));
+    return ResponseEntity.ok(jobService.addCategory(request));
   }
 
 }

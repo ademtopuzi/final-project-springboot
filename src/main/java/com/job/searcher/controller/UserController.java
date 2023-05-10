@@ -21,20 +21,20 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/user/")
-    public ResponseEntity <UserDto> registerUser (@Validated @RequestBody UserDto req){
-        UserDto dto = userService.registerUser(req,"USER");
-        return ResponseEntity.ok(dto);
+    public ResponseEntity <UserDto> registerUser (@Validated @RequestBody UserDto request){
+        UserDto userDto = userService.registerUser(request,"USER");
+        return ResponseEntity.ok(userDto);
     }
 
     @GetMapping("/user/{id}")
     public ResponseEntity <UserDto> findUserById(@PathVariable Integer id){
-        User u = userService.findUserById(id);
-        return ResponseEntity.ok(UserMapper.toDto(u));
+        User user = userService.findUserById(id);
+        return ResponseEntity.ok(UserMapper.toDto(user));
     }
 
     @PutMapping("/user/{id}")
-    public ResponseEntity<UserUpdateDto> updateUser(@PathVariable Integer id,@RequestBody UserUpdateDto req){
-        return ResponseEntity.ok(userService.updateUser(id,req));
+    public ResponseEntity<UserUpdateDto> updateUser(@PathVariable Integer id,@RequestBody UserUpdateDto request){
+        return ResponseEntity.ok(userService.updateUser(id,request));
 
     }
 

@@ -29,13 +29,13 @@ public class AppliedServiceImpl implements AppliedService {
 
     @Override
     public AppliedDto addAplication(Integer userId, Integer jobId) {
-        User u = userRepository.findById(userId)
+        User user = userRepository.findById(userId)
                 .orElseThrow(()->new ResourceNotFountException(String.format("User with id %s not found ",userId)));
-        Job j = jobRepository.findById(jobId)
+        Job job = jobRepository.findById(jobId)
                 .orElseThrow(()->new ResourceNotFountException(String.format("Job with id %s not found ",jobId)));
 
 
-        Applied applied = AppliedMapper.toEntity(u,j);
+        Applied applied = AppliedMapper.toEntity(user,job);
         applied=appliedREpository.save(applied);
 
 

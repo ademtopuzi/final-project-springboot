@@ -10,19 +10,19 @@ public class JobRepositoryCustomImpl implements JobRepositoryCustom {
 
 
     @Autowired
-    private EntityManager em;
+    private EntityManager entityManager;
 
     @Override
     public List<Job> findJobsByCompanyId(Integer companyId) {
 
-        return em.createNamedQuery("job_findByJobByCompany",Job.class)
+        return entityManager.createNamedQuery("job_findByJobByCompany",Job.class)
                 .setParameter("company_id",companyId)
                 .getResultList();
     }
 
     @Override
     public List<Job> findJobsByCategoryId(Integer categoryId) {
-        return em.createNamedQuery("job_findByJobByCategory",Job.class)
+        return entityManager.createNamedQuery("job_findByJobByCategory",Job.class)
                 .setParameter("category_id",categoryId)
                 .getResultList();
     }

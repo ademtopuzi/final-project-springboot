@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface JobService {
 
-    JobDto addJob(Integer categoryId ,JobDto req,Integer companyId);
+    JobDto addJob(Integer categoryId ,JobDto request,Integer companyId);
 
     Job findJobByid(Integer id);
 
-    JobCategoryDto addCategory(JobCategoryDto req);
+    JobCategoryDto addCategory(JobCategoryDto request);
 
     List<JobDto> findJobsByCompanyId(Integer companyId);
 

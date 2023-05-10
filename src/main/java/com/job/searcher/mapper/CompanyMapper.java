@@ -20,29 +20,29 @@ public class CompanyMapper {
 
 
 
-    public static Company toEntity(CompanyDto cm){
+    public static Company toEntity(CompanyDto companyDto){
         return Company.builder()
-                .name(cm.getName())
-                .city(cm.getCity())
-                .email(cm.getEmail())
-                .password(cm.getPassword())
+                .name(companyDto.getName())
+                .city(companyDto.getCity())
+                .email(companyDto.getEmail())
+                .password(companyDto.getPassword())
                 .build();
     }
 
-    public static CompanyUpdateDto companyUpdateDto(Company c){
+    public static CompanyUpdateDto companyUpdateDto(Company company){
         return CompanyUpdateDto.builder()
-                .id(c.getId())
-                .name(c.getName())
-                .city(c.getCity())
-                .email(c.getEmail())
+                .id(company.getId())
+                .name(company.getName())
+                .city(company.getCity())
+                .email(company.getEmail())
                 .build();
     }
 
-    public static Company updateBuilder(Company c,CompanyUpdateDto updateDto){
-        c.setName(updateDto.getName());
-        c.setEmail(updateDto.getEmail());
-        c.setCity(updateDto.getCity());
-        return c;
+    public static Company updateBuilder(Company company,CompanyUpdateDto updateDto){
+        company.setName(updateDto.getName());
+        company.setEmail(updateDto.getEmail());
+        company.setCity(updateDto.getCity());
+        return company;
     }
 
 }

@@ -32,11 +32,11 @@ public class JobMapper {
                 .build();
     }
 
-    public static JobCategoryDto toDto(Category c){
+    public static JobCategoryDto toDto(Category category){
         return JobCategoryDto.builder()
-                .id(c.getId())
-                .name(c.getName())
-                .parentCategory(c.getParent()!=null?JobMapper.toDto(c.getParent()):null)
+                .id(category.getId())
+                .name(category.getName())
+                .parentCategory(category.getParent()!=null?JobMapper.toDto(category.getParent()):null)
                 .build();
 
     }

@@ -18,34 +18,34 @@ public class UserMapper {
 
     }
 
-    public static User toEntity(UserDto u){
+    public static User toEntity(UserDto userDto){
         return User.builder()
-                .id(u.getId())
-                .name(u.getName())
-                .lastname(u.getLastname())
-                .email(u.getEmail())
-                .password(u.getPassword())
-                .phoneNumber(u.getPhoneNumber())
+                .id(userDto.getId())
+                .name(userDto.getName())
+                .lastname(userDto.getLastname())
+                .email(userDto.getEmail())
+                .password(userDto.getPassword())
+                .phoneNumber(userDto.getPhoneNumber())
                 .build();
 
     }
 
-    public static UserUpdateDto toUserUpdateDto(User  req){
+    public static UserUpdateDto toUserUpdateDto(User  request){
         return UserUpdateDto.builder()
-                .id(req.getId())
-                .name(req.getName())
-                .lastname(req.getLastname())
-                .email(req.getEmail())
-                .phoneNumber(req.getPhoneNumber())
+                .id(request.getId())
+                .name(request.getName())
+                .lastname(request.getLastname())
+                .email(request.getEmail())
+                .phoneNumber(request.getPhoneNumber())
                 .build();
     }
 
-    public static User updateBuilder(User u,UserUpdateDto req){
-        u.setName(req.getName());
-        u.setLastname(req.getLastname());
-        u.setEmail(req.getEmail());
-        u.setPhoneNumber(req.getPhoneNumber());
-        return u;
+    public static User updateBuilder(User user,UserUpdateDto request){
+        user.setName(request.getName());
+        user.setLastname(request.getLastname());
+        user.setEmail(request.getEmail());
+        user.setPhoneNumber(request.getPhoneNumber());
+        return user;
     }
 
 

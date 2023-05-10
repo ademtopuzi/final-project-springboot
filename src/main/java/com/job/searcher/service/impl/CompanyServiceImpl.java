@@ -16,32 +16,32 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CompanyServiceImpl implements CompanyService {
 
-    private final CompanyRepository cm;
+    private final CompanyRepository companyRepository;
     private final PasswordEncoder passwordEncoder;
 
 
     @Override
-    public CompanyDto registerCompany(CompanyDto req) {
+    public CompanyDto registerCompany(CompanyDto request) {
 
-        Company c = CompanyMapper.toEntity(req);
-        c.setPassword(passwordEncoder.encode(req.getPassword()));
-        c=cm.save(c);
-        return CompanyMapper.toDto(c);
+        Company company = CompanyMapper.toEntity(request);
+        company.setPassword(passwordEncoder.encode(request.getPassword()));
+        company=companyRepository.save(company);
+        return CompanyMapper.toDto(company);
     }
 
     @Override
     public Company findCompanyById(Integer id) {
-        return cm.findById(id).orElseThrow(() ->new ResourceNotFountException(String
+        return companyRepository.findById(id).orElseThrow(() ->new ResourceNotFountException(String
                 .format("Company with id %s not found " , id )));
     }
 
     @Override
-    public CompanyUpdateDto updateCompany(Integer id, CompanyUpdateDto req) {
+    public CompanyUpdateDto updateCompany(Integer id, CompanyUpdateDto request) {
 
-        Company c =findCompanyById(id);
-        c=CompanyMapper.updateBuilder(c,req);
+        Company company =findCompanyById(id);
+        company=CompanyMapper.updateBuilder(company,request);
 
-        return CompanyMapper.companyUpdateDto(cm.save(c));
+        return CompanyMapper.companyUpdateDto(companyRepository.save(company));
     }
 
 

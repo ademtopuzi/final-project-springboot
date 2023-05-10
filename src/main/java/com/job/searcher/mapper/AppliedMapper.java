@@ -17,10 +17,10 @@ public class AppliedMapper {
 
     }
 
-    public static Applied toEntity( User u , Job j){
+    public static Applied toEntity( User user , Job job){
         return Applied.builder()
-                .job(j)
-                .user(u)
+                .job(job)
+                .user(user)
                 .build();
     }
 

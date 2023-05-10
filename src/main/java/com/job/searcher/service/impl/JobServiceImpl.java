@@ -29,13 +29,13 @@ public class JobServiceImpl implements JobService {
 
 
     @Override
-    public JobDto addJob(Integer categoryId, JobDto req, Integer companyId) {
+    public JobDto addJob(Integer categoryId, JobDto request, Integer companyId) {
         Category category=categoryRepository.findById(categoryId)
                 .orElseThrow(()-> new ResourceNotFountException(String.format("Category with id %s not found ",categoryId)));
 
         Company company =companyRepository.findById(companyId)
                 .orElseThrow(()->new ResourceNotFountException(String.format("Company with id %s not found ",companyId)));
-        Job job = JobMapper.toEntity(req,category,company);
+        Job job = JobMapper.toEntity(request,category,company);
         job= jobRepository.save(job);
         return JobMapper.toDto(job);
     }
@@ -48,13 +48,13 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
-    public JobCategoryDto addCategory(JobCategoryDto req) {
+    public JobCategoryDto addCategory(JobCategoryDto request) {
 
-        Category save = JobMapper.toEntity(req);
-        if(req.getParentCategory()!=null){
-            save.setParent(categoryRepository.findById(req.getParentCategory().getId())
+        Category save = JobMapper.toEntity(request);
+        if(request.getParentCategory()!=null){
+            save.setParent(categoryRepository.findById(request.getParentCategory().getId())
                     .orElseThrow(()->new ResourceNotFountException(String
-                            .format("Parent category with id %s not found ",req.getParentCategory().getId()))));
+                            .format("Parent category with id %s not found ",request.getParentCategory().getId()))));
 
         }
 

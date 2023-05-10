@@ -36,21 +36,21 @@ public class UserServiceImpl implements UserService , UserDetailsService {
     }
 
     @Override
-    public UserDto registerUser(UserDto req, String userRole) {
+    public UserDto registerUser(UserDto request, String userRole) {
 
-        User u = UserMapper.toEntity(req);
-        u.setRole(userRole!=null?UserRole.fromValue(userRole):UserRole.USER);
-        u.setPassword(passwordEncoder.encode(req.getPassword()));
-        u = userRepository.save(u);
+        User user = UserMapper.toEntity(request);
+        user.setRole(userRole!=null?UserRole.fromValue(userRole):UserRole.USER);
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user = userRepository.save(user);
 
-        return UserMapper.toDto(u);
+        return UserMapper.toDto(user);
     }
 
     @Override
-    public UserUpdateDto updateUser(Integer id, UserUpdateDto req) {
-        User u = findUserById(id);
-        u=UserMapper.updateBuilder(u,req);
-        return UserMapper.toUserUpdateDto(userRepository.save(u));
+    public UserUpdateDto updateUser(Integer id, UserUpdateDto request) {
+        User user = findUserById(id);
+        user=UserMapper.updateBuilder(user,request);
+        return UserMapper.toUserUpdateDto(userRepository.save(user));
     }
 
 

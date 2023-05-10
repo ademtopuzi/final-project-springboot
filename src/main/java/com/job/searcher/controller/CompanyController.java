@@ -19,20 +19,20 @@ public class CompanyController {
 
 
     @PostMapping("/company/")
-    public ResponseEntity<CompanyDto> registerCompany(@Validated @RequestBody CompanyDto req){
-        CompanyDto companyDto = companyService.registerCompany(req);
+    public ResponseEntity<CompanyDto> registerCompany(@Validated @RequestBody CompanyDto request){
+        CompanyDto companyDto = companyService.registerCompany(request);
         return ResponseEntity.ok(companyDto);
 
     }
 
     @GetMapping("/company/{id}")
     public ResponseEntity<CompanyDto> findCompanyById(@PathVariable Integer id ){
-        Company c = companyService.findCompanyById(id);
-        return ResponseEntity.ok(CompanyMapper.toDto(c));
+        Company company = companyService.findCompanyById(id);
+        return ResponseEntity.ok(CompanyMapper.toDto(company));
     }
 
     @PutMapping("/company/{id}")
-    public ResponseEntity<CompanyUpdateDto> updateCompany(@PathVariable Integer id , @RequestBody CompanyUpdateDto req){
-        return ResponseEntity.ok(companyService.updateCompany(id ,req));
+    public ResponseEntity<CompanyUpdateDto> updateCompany(@PathVariable Integer id , @RequestBody CompanyUpdateDto request){
+        return ResponseEntity.ok(companyService.updateCompany(id ,request));
     }
 }

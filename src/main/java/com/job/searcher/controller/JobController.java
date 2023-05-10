@@ -20,8 +20,8 @@ public class JobController {
     private final JobService jobService;
 
     @PostMapping("/job/{categoryID}/{companyID}")
-    public ResponseEntity<JobDto> addJob(@PathVariable Integer categoryID ,@PathVariable Integer companyID,@Validated@RequestBody JobDto req){
-        JobDto jobDto= jobService.addJob(categoryID,req,companyID);
+    public ResponseEntity<JobDto> addJob(@PathVariable Integer categoryID ,@PathVariable Integer companyID,@Validated@RequestBody JobDto request){
+        JobDto jobDto= jobService.addJob(categoryID,request,companyID);
         return ResponseEntity.ok(jobDto);
 
     }
@@ -33,9 +33,9 @@ public class JobController {
     }
 
     @PostMapping("/category")
-    public ResponseEntity<JobCategoryDto> addCategory(@RequestBody JobCategoryDto req){
+    public ResponseEntity<JobCategoryDto> addCategory(@RequestBody JobCategoryDto request){
 
-        return ResponseEntity.ok(jobService.addCategory(req));
+        return ResponseEntity.ok(jobService.addCategory(request));
     }
 
     @GetMapping("/company/{companyId}/list")

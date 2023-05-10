@@ -8,9 +8,9 @@ public interface UserService {
 
     User findUserById (Integer id);
 
-    UserDto registerUser (UserDto req,String userRole);
+    UserDto registerUser (UserDto request,String userRole);
 
-    UserUpdateDto updateUser(Integer id ,UserUpdateDto req);
+    UserUpdateDto updateUser(Integer id ,UserUpdateDto request);
 
 
 }
